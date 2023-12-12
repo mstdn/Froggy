@@ -2,15 +2,15 @@ import { Ground } from "./Ground"
 import Structures from "./world/Structures"
 import Ocean from "./world/Ocean"
 import Environment from "./world/Environment"
-import Rocks from "./world/Rocks"
 import Trees from "./world/Trees"
 import Collectables from "./Collectables"
 import Teleports from "./world/Teleports"
 import Platforms from "./world/Platforms"
-import Buildings from "./world/Buildings"
+
 import { Twitter } from "./world/models/TwitterLogo"
 import { XLogo } from "./world/models/XLogo"
 import { Elon } from "./world/models/Elon"
+
 
 export default function World(props)
 {
@@ -25,8 +25,6 @@ export default function World(props)
             <Structures />
         
             <Trees />
-
-            <Rocks char={ char } />
 
 
             <Teleports char={ char } />
