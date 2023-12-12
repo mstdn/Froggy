@@ -2,21 +2,21 @@ import React, { forwardRef, useRef } from 'react'
 import { useGLTF } from '@react-three/drei'
 import { RigidBody, CuboidCollider } from '@react-three/rapier';
 
-export function Rock(props) {
-  const { nodes, materials } = useGLTF("./assets/models/world/rock.glb");
-  return (
-    <group {...props} dispose={null}>
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.Rock.geometry}
-        material={materials.Stone}
-        rotation={[-Math.PI / 2, 0, 0]}
-        scale={100}
-      />
-    </group>
-  );
-}
+// export function Rock(props) {
+//   const { nodes, materials } = useGLTF("./assets/models/world/rock.glb");
+//   return (
+//     <group {...props} dispose={null}>
+//       <mesh
+//         castShadow
+//         receiveShadow
+//         geometry={nodes.Rock.geometry}
+//         material={materials.Stone}
+//         rotation={[-Math.PI / 2, 0, 0]}
+//         scale={100}
+//       />
+//     </group>
+//   );
+// }
 
 const Rock1 = forwardRef((props, ref) =>
 {

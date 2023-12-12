@@ -69,7 +69,7 @@ export default function App()
                     <Physics
                         timeStep="vary"
                         paused={ paused }
-                        debug
+                        // debug
                         gravity={ [ 0, - 9.81, 0 ] }
                         >
                         <PerformanceMonitor
@@ -92,7 +92,7 @@ export default function App()
                 { isDesktop && started && (
                     <>
                         <PointerLockControls />
-                        <Perf position="top-left" />
+                        {/* <Perf position="top-left" /> */}
                     </>
                 )}
             </Canvas>

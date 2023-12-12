@@ -3,9 +3,9 @@ import Lights from '../Lights.jsx'
 import Player from './Player.jsx'
 import Effects from './Effects.jsx'
 import { useRef, useState } from 'react'
-import Texts from './world/Texts.jsx'
-import { RigidBody } from '@react-three/rapier'
-import { Rock } from './world/Rocks.jsx'
+// import Texts from './world/Texts.jsx'
+// import { RigidBody } from '@react-three/rapier'
+// import { Rock } from './world/Rocks.jsx'
 
 // export function Rocked()
 // {
