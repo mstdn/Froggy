@@ -101,18 +101,18 @@ export default function Platforms()
                 position={ [ - 600, 0, - 150 ] } 
                 boxSize={ [ 250, 4, 250 ] }
                 colBox={ [ 125, 2, 125 ] }
-                texture={ './assets/textures/sand.jpg' }
-                map={ [ 64, 64 ] }
-                color={ "#c49308" }
+                texture={ './assets/textures/mars2.jpg' }
+                map={ [ 1, 1 ] }
+                color={ "white" }
                 scale={ 1 }
             />
             <BeachIsland 
                 position={ [ 600, 0, 150 ] } 
                 boxSize={ [ 250, 4, 250 ] }
                 colBox={ [ 125, 2, 125 ] }
-                texture={ './assets/textures/sand.jpg' }
+                texture={ './assets/textures/grass2.jpg' }
                 map={ [ 64, 64 ] }
-                color={ "#c49308" }
+                color={ "green" }
                 scale={ 1 }
             />
         </>

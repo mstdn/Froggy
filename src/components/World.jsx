@@ -10,6 +10,7 @@ import Platforms from "./world/Platforms"
 import { Twitter } from "./world/models/TwitterLogo"
 import { XLogo } from "./world/models/XLogo"
 import { Elon } from "./world/models/Elon"
+import Texts from "./world/Texts"
 
 
 export default function World(props)
@@ -22,6 +23,8 @@ export default function World(props)
             <Platforms />
             {/* <Buildings /> */}
             {/* <Platforms /> */}
+
+            <Texts char={ char } />
             <Structures />
         
             <Trees />

@@ -57,8 +57,8 @@ export default function Teleports(props)
     return(
         <>
             <Teleport 
-                position={ [ 120, 2, 120 ] } 
-                from={ [ 120, 2, 120 ] } 
+                position={ [ 100, 2, 100 ] } 
+                from={ [ 100, 2, 100 ] } 
                 target={ { x: 490, y: 10, z: 255 } }
                 // rotation-x={ - Math.PI * 0.01 }
                 // rotation-z={ Math.PI * 0.03 }
@@ -66,15 +66,26 @@ export default function Teleports(props)
                 char={ char } 
             />
             <Teleport 
-                position={ [ - 120, 2, - 120 ] } 
-                from={ [ - 120, 2, - 120 ] } 
+                position={ [ - 111, 2, - 101 ] } 
+                from={ [ - 111, 2, - 101 ] } 
                 target={ { x: - 490, y: 10, z: - 255 } }
-                // rotation-x={ - Math.PI * 0.03 }
-                //rotation-z={ Math.PI * 0.03 }
                 scale={ 0.8 } 
                 char={ char } 
             />
-
+            <Teleport 
+                position={ [ 699, 2, 47 ] } 
+                from={ [ 699, 2, 47 ] } 
+                target={ { x: - 490, y: 10, z: - 255 } }
+                scale={ 0.8 } 
+                char={ char } 
+            />
+            <Teleport 
+                position={ [ - 700, 2, - 45 ] } 
+                from={ [ - 700, 2, - 45 ] } 
+                target={ { x: 490, y: 10, z: 255 } }
+                scale={ 0.8 } 
+                char={ char } 
+            />
         </>
     )
 }

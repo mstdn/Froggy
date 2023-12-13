@@ -22,10 +22,10 @@ const GameText = (props) =>
         letterSpacing,
         textAlign,
         hasAudio,
-        font
+        font,
     } = props
     const [ playSound ] = useSound(sound, { volume: 1, interrupt: true })
-    const [ soundText, setSoundText ] = useState(false)
+    let play = true
 
     useFrame(() =>
     {
@@ -35,14 +35,14 @@ const GameText = (props) =>
             const charPosition = char.current.translation()
             const distance = position.distanceTo(new Vector3(charPosition.x, charPosition.y, charPosition.z))
             
-            if(hasAudio && distance < dis && !soundText)
+            if(hasAudio && distance < dis && play)
             {
                 playSound()
-                setSoundText(true)
+                play = false
             } 
-            else if(hasAudio && distance > dis && soundText && repeat)
+            else if(hasAudio && distance > dis && !play && repeat)
             {
-                setSoundText(false)
+                play = true
             }
         }
     })
@@ -72,21 +72,21 @@ export default function Texts(props)
     return(
         <>
             <GameText 
-                text="Free Teleports For Everyone!"
-                font="./assets/fonts/1.otf"
-                position={ [ 32, 1, - 66 ] }
-                pos={ [ 32, 1, - 66 ] }
-                rotationY={ - Math.PI * 0.1 }
-                color={ "#9c0909" }
-                size={ 1 }
-                width={ 4 }
-                lineHeight={ 1 }
+                text="Welcome to Froggy's islands!"
+                font="./assets/fonts/pixelify/PixelifySans.ttf"
+                position={ [ 0, 6.8, 14.9 ] }
+                pos={ [ 0, 0, 14.9 ] }
+                rotationY={ - Math.PI * 1 }
+                color={ "#ffffff" }
+                size={ 0.8 }
+                width={ 8 }
+                lineHeight={ 2 }
                 letterSpacing={ 0.05 }
                 textAlign="center"
                 hasAudio={ true }
-                sound={ './assets/audio/teleport-voice.wav' }
-                repeat={ true }
-                dis={ 18 }
+                sound={ './assets/audio/welcome.wav' }
+                repeat={ false }
+                dis={ 10 }
                 char={ char }
             />
         </>

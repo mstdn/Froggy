@@ -6,19 +6,20 @@ import { Vector3 } from "three"
 import useSound from "use-sound"
 
 const DIST = 1.5
-const SCALE = 2
+const SCALE = 0.2
 
 const Coin = (props) => 
 {
-    const [ playCoinSound ] = useSound('./assets/audio/coin.wav')
+    const [ playCoinSound ] = useSound('./assets/audio/yum.wav')
     const { coin, char, dis } = props
     const increaseCoins = useGame(state => state.increaseCoins)
-    const { nodes, materials } = useGLTF("./assets/models/coin.glb")
+    const { nodes, materials } = useGLTF("./assets/models/fly.glb")
 
     useFrame((state, delta) =>
     {
         // Item rotate
         coin.current.rotation.y += delta * 0.5
+        // coin.current.rotation.x -= Math.cos(delta * 0.5) * 0.01
 
         if(char.current)
         {
@@ -39,21 +40,31 @@ const Coin = (props) =>
 
     return(
         <>
-            <group scale={ 2 } ref={coin} {...props} dispose={null}>
-                <group rotation={[-Math.PI / 2, 0, 0]} scale={100}>
-                    <mesh
+            <group ref={coin} {...props} dispose={null}>
+                <mesh
                     castShadow
-                    receiveShadow
-                    geometry={nodes.Coin_1.geometry}
-                    material={materials.Yellow}
-                    />
-                    <mesh
+                    
+                    geometry={nodes["Circle004_Circle001-Mesh"].geometry}
+                    material={materials["455A64"]}
+                />
+                <mesh
                     castShadow
-                    receiveShadow
-                    geometry={nodes.Coin_2.geometry}
-                    material={materials.DarkYellow}
-                    />
-                </group>
+                    
+                    geometry={nodes["Circle004_Circle001-Mesh_1"].geometry}
+                    material={materials["80DEEA"]}
+                />
+                <mesh
+                    castShadow
+                    
+                    geometry={nodes["Circle004_Circle001-Mesh_2"].geometry}
+                    material={materials.F44336}
+                />
+                <mesh
+                    castShadow
+                    
+                    geometry={nodes["Circle004_Circle001-Mesh_3"].geometry}
+                    material={materials["4CAF50"]}
+                />
             </group>
         </>
     )
@@ -61,7 +72,7 @@ const Coin = (props) =>
 
 export function totalCoinAmount()
 {
-    return totalCoinAmount = 11
+    return totalCoinAmount = 4
 }
 
 export default function Collectables(props)
@@ -105,7 +116,7 @@ export default function Collectables(props)
             <group>
                 <Coin 
                     coin={ coin1 }
-                    position={ [ 0.1, 3, 19.7 ] }
+                    position={ [ 0.1, 3.5, 5 ] }
                     dis={ DIST }
                     scale={ SCALE }
                     char={ char }
@@ -113,7 +124,7 @@ export default function Collectables(props)
                 />
                 <Coin 
                     coin={ coin2 } 
-                    position={ [ 50.25, 3, 4.2 ] } 
+                    position={ [ - 88, 3.5, 6.5 ] } 
                     dis={ DIST }
                     scale={ SCALE }
                     char={ char }
@@ -121,19 +132,21 @@ export default function Collectables(props)
                 />
                 <Coin 
                     coin={ coin3 } 
-                    position={ [ 64.73, 3, 50 ] } 
+                    position={ [ - 117, 3.5, - 106 ] } 
                     dis={ DIST }
                     char={ char }
                     col={ false }
+                    scale={ SCALE }
                 />
                 <Coin 
                     coin={ coin4 } 
-                    position={ [ 79.5, 3, 50 ] }
+                    position={ [ 11, 3, - 68 ] }
                     dis={ DIST }
                     char={ char }
+                    scale={ SCALE }
                     col={ false }
                 />
-                <Coin 
+                {/* <Coin 
                     coin={ coin5 } 
                     position={ [ 79.5, 3, 35 ] }
                     dis={ DIST }
@@ -182,7 +195,7 @@ export default function Collectables(props)
                     dis={ DIST }
                     char={ char }
                     col={ false }
-                />
+                /> */}
             </group>
 
             {/* Right side Start */}
@@ -347,4 +360,4 @@ export default function Collectables(props)
 
 
 
-useGLTF.preload("./assets/models/coin.glb")
+useGLTF.preload("./assets/models/fly.glb")

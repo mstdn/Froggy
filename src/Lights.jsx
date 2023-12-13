@@ -78,11 +78,11 @@ export default function Lights(props)
             position={ [ 1, 8, 1 ] }
             intensity={ 1 }
             shadow-camera-near={ 0.1 }
-            shadow-camera-far={ 200 }
-            shadow-camera-top={ 200 }
-            shadow-camera-right={ 200 }
-            shadow-camera-bottom={ - 200 }
-            shadow-camera-left={ - 200 }
+            shadow-camera-far={ 75 }
+            shadow-camera-top={ 75 }
+            shadow-camera-right={ 75 }
+            shadow-camera-bottom={ - 75 }
+            shadow-camera-left={ - 75 }
             shadow-bias={ - 0.001 }
             shadow-mapSize-width={ 2048 }
             shadow-mapSize-height={ 2048 }

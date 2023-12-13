@@ -60,7 +60,7 @@ export default function App()
         <KeyboardControls map={ keyboardMap }>
             <Canvas
                 shadows={ !downgradedPerformance }
-                camera={ { far: 1000, near: 0.1, } }
+                camera={ { far: 900, near: 0.1, } }
                 dpr={ [ 1, 1.5 ] }
                 onClick={() => setPaused(false)}
                 // style={{ background: '#000000' }}
@@ -84,7 +84,7 @@ export default function App()
                                     <Experience
                                         downgradedPerformance={ downgradedPerformance } 
                                     />
-                                    {/* <Preload all /> */}
+                                    <Preload all />
                                 </>
                             )}
                         </Suspense>

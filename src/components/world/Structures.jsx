@@ -209,6 +209,40 @@ const Rover = forwardRef((props, ref) =>
 //     )
 // }
 
+const Sign = (props) =>
+{
+    const { nodes, materials } = useGLTF("./assets/models/world/wooden-sign.glb")
+    return (
+      <group scale={ 3 } {...props} dispose={null}>
+        <group scale={100}>
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Sign12_1.geometry}
+            material={materials["Light Wood"]}
+          />
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Sign12_2.geometry}
+            material={materials["Dark Wood"]}
+          />
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Sign12_3.geometry}
+            material={materials.Herbs}
+          />
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Sign12_4.geometry}
+            material={materials.Rocks}
+          />
+        </group>
+      </group>
+    )
+}
 
 export default function Structures()
 {
@@ -229,10 +263,14 @@ export default function Structures()
             <Crate ref={ crate2 } position={ [ 48, 12.5, 55 ] } scale={ 1.2 } rotation-y={ Math.PI * 0.7 } />
             <Crate ref={ crate3 } position={ [ - 10, 14, 15 ] } scale={ 1 } />
             
-            {/* <Barrel ref={ barrel } position={ [ - 6, 11, 65 ] } scale={ 1.5 } /> */}
-            {/* <Barrel ref={ barrel1 } position={ [ 16, 7.9, 10 ] } scale={ 1.2 } /> */}
+            <Barrel ref={ barrel } position={ [ - 6, 11, 65 ] } scale={ 1.5 } />
+            <Barrel ref={ barrel1 } position={ [ 16, 7.9, 10 ] } scale={ 1.2 } />
             
             <Rover ref={ rover } position={ [ 8.4, 7.8, - 80 ] } scale={ 1.2 } />
+
+            <group>
+                <Sign position={ [ 0, 1.8, 15 ] } rotation-y={ Math.PI * 1 } />
+            </group>
         </>
     )
 }
@@ -240,3 +278,4 @@ export default function Structures()
 useGLTF.preload("./assets/models/world/crate.glb")
 useGLTF.preload("./assets/models/world/barrel.glb")
 useGLTF.preload("./assets/models/world/rover.glb")
+useGLTF.preload("./assets/models/world/wooden-sign.glb")
