@@ -12,6 +12,7 @@ import { XLogo } from "./world/models/XLogo"
 import { Elon } from "./world/models/Elon"
 import Texts from "./world/Texts"
 import Buildings from "./world/Buildings"
+import { Trump } from "./world/models/Trump"
 
 
 export default function World(props)
@@ -37,6 +38,7 @@ export default function World(props)
             <Twitter position={ [ - 92, 12.5, 27 ] } rotation-y={ Math.PI * 0 } />
             <XLogo position={ [ 46, 13, - 5 ] } rotation-y={ Math.PI * 1 } />
             <Elon rotation-y={ Math.PI * 0.5 } position={ [ - 102, 12.5, 20 ] } pos={ [ 10, 7.9, 22 ] } char={ char } />
+            <Trump rotation-y={ Math.PI * 0.5 } position={ [ - 99, 12.5, 7.8 ] } pos={ [ 10, 7.9, 22 ] } char={ char } />
 
             <Ocean />
             <Ground />
