@@ -113,6 +113,72 @@ const PirateBarrel = forwardRef((props, ref) =>
         )
 })
 
+const PirateChestOpen = forwardRef((props, ref) =>
+{
+    const { nodes, materials } = useGLTF("./assets/models/world/pirate/chest-gold.glb")
+    return (
+        <RigidBody 
+            // colliders="hull"
+            colliders={ false }
+            gravityScale={ 1.5 }
+            // friction={ 1 }
+            // restitution={ 0.5 }
+            ref={ ref }
+            canSleep={ false }
+            {...props}
+        >   
+            <group dispose={null}>
+                <group scale={ 300 }>
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Prop_Chest_Gold.geometry}
+                        material={materials.Atlas}
+                        scale={1}
+                    />
+                </group>
+            </group>
+            <CuboidCollider 
+                args={ [ 1.5, 1.8, 1.5 ] } 
+                position={ [ 0, 1.8, 0 ] }
+            />
+        </RigidBody>
+        )
+})
+
+const PirateSkull = forwardRef((props, ref) =>
+{
+    const { nodes, materials } = useGLTF("./assets/models/world/pirate/skull.glb")
+    return (
+        <RigidBody 
+            colliders={ false }
+            gravityScale={ 1.5 }
+            // friction={ 1 }
+            // restitution={ 0.5 }
+            ref={ ref }
+            canSleep={ false }
+            {...props}
+        >   
+            <group dispose={null}>
+                <group scale={ 100 }>
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Environment_Skulls.geometry}
+                        material={materials.Atlas}
+                        scale={1}
+                    />
+                </group>
+            </group>
+            <CuboidCollider 
+                args={ [ 1.5, 1.8, 2 ] } 
+                position={ [ 0, 1.8, 0.2 ] }
+            />
+        </RigidBody>
+        )
+})
+
+
 const Rover = forwardRef((props, ref) =>
 {
     const { nodes, materials } = useGLTF("./assets/models/world/rover.glb")
@@ -293,6 +359,10 @@ export default function Structures()
 
     // Pirate barrels
     const pirateBarrel = useRef()
+
+    const pirateChestOpen = useRef()
+    
+    const pirateSkull = useRef()
     
     return(
         <>
@@ -301,8 +371,8 @@ export default function Structures()
             <Crate ref={ crate2 } position={ [ 48, 12.5, 55 ] } scale={ 1.2 } rotation-y={ Math.PI * 0.7 } />
             <Crate ref={ crate3 } position={ [ - 10, 14, 15 ] } scale={ 1 } />
             
-            <Barrel ref={ barrel } position={ [ - 6, 11, 65 ] } scale={ 1.5 } />
-            <Barrel ref={ barrel1 } position={ [ 16, 7.9, 10 ] } scale={ 1.2 } />
+            <Barrel ref={ barrel } position={ [ 510, 11, 213 ] } scale={ 1.5 } />
+            <Barrel ref={ barrel1 } position={ [ 607, 7.9, 198 ] } scale={ 1.2 } />
             
             <Rover ref={ rover } position={ [ - 540, 3.1, - 200 ] } scale={ 1.2 } />
 
@@ -311,6 +381,8 @@ export default function Structures()
             </group>
             <group>
                 <PirateBarrel ref={ pirateBarrel } position={ [ 56, 7.9, - 76 ] } rotation-y={ Math.PI * 1 } />
+                <PirateChestOpen ref={ pirateChestOpen } position={ [ - 70, 7.9, 90 ] } rotation-y={ - Math.PI * 1.4 } />
+                <PirateSkull ref={ pirateSkull } position={ [ - 31, 7.9, - 69 ] } rotation-y={ Math.PI * 0.3 } />
             </group>
         </>
     )
@@ -320,3 +392,7 @@ useGLTF.preload("./assets/models/world/crate.glb")
 useGLTF.preload("./assets/models/world/barrel.glb")
 useGLTF.preload("./assets/models/world/rover.glb")
 useGLTF.preload("./assets/models/world/wooden-sign.glb")
+
+useGLTF.preload("./assets/models/world/pirate/barrel.glb")
+useGLTF.preload("./assets/models/world/pirate/chest-gold.glb")
+useGLTF.preload("./assets/models/world/pirate/skull.glb")

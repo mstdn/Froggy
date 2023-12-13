@@ -72,7 +72,7 @@ const Coin = (props) =>
 
 export function totalCoinAmount()
 {
-    return totalCoinAmount = 4
+    return totalCoinAmount = 12
 }
 
 export default function Collectables(props)
@@ -112,7 +112,7 @@ export default function Collectables(props)
     return(
     <>
         <group>
-            {/* Left side start */}
+            {/* Beach island */}
             <group>
                 <Coin 
                     coin={ coin1 }
@@ -132,7 +132,7 @@ export default function Collectables(props)
                 />
                 <Coin 
                     coin={ coin3 } 
-                    position={ [ - 117, 3.5, - 106 ] } 
+                    position={ [ - 102, 3.5, - 95 ] } 
                     dis={ DIST }
                     char={ char }
                     col={ false }
@@ -140,36 +140,39 @@ export default function Collectables(props)
                 />
                 <Coin 
                     coin={ coin4 } 
-                    position={ [ 11, 3, - 68 ] }
+                    position={ [ - 13, 3.5, 111 ] }
                     dis={ DIST }
                     char={ char }
                     scale={ SCALE }
                     col={ false }
                 />
-                {/* <Coin 
+                <Coin 
                     coin={ coin5 } 
-                    position={ [ 79.5, 3, 35 ] }
+                    position={ [ 97, 3.5, 90 ] }
                     dis={ DIST }
                     char={ char }
                     col={ false }
+                    scale={ SCALE }
                 />
                 <Coin 
                     coin={ coin6 } 
-                    position={ [ 79.5, 3, 20 ] }
+                    position={ [ 45, 3, - 112 ] }
                     dis={ DIST }
                     char={ char }
                     col={ false }
+                    scale={ SCALE }
                 />
                 <Coin 
                     coin={ coin7 } 
-                    position={ [ 79.5, 3, 5 ] }
+                    position={ [ - 63, 3.5, 88 ] }
                     dis={ DIST }
                     char={ char }
                     col={ false }
+                    scale={ SCALE }
                 />
                 <Coin 
                     coin={ coin8 } 
-                    position={ [ 65, 3, 5 ] }
+                    position={ [ 45, 3.5, 56 ] }
                     dis={ DIST }
                     scale={ SCALE }
                     char={ char }
@@ -177,37 +180,45 @@ export default function Collectables(props)
                 />
                 <Coin 
                     coin={ coin9 } 
-                    position={ [ 65, 3, 20 ] }
+                    position={ [ 100, 3.5, - 25 ] }
                     dis={ DIST }
                     char={ char }
                     col={ false }
+                    scale={ SCALE }
                 />
+            </group>
+
+            {/* Grass island */}
+            <group>
                 <Coin 
                     coin={ coin10 } 
-                    position={ [ 65, 3, 35 ] }
+                    position={ [ 557, 3.5, 191 ] }
                     dis={ DIST }
                     char={ char }
                     col={ false }
+                    scale={ SCALE }
                 />
                 <Coin 
                     coin={ coin11 } 
-                    position={ [ 65, 3, 50 ] }
+                    position={ [ 568, 3.5, 101 ] }
                     dis={ DIST }
                     char={ char }
                     col={ false }
-                /> */}
-            </group>
-
-            {/* Right side Start */}
-            {/* <group>
+                    scale={ SCALE }
+                />
                 <Coin 
                     coin={ coin12 }
-                    position={ [ - 88, 14, 33 ] }
+                    position={ [ 690, 3.5, 55 ] }
                     dis={ DIST }
                     scale={ SCALE }
                     char={ char }
                     col={ false }
                 />
+            </group>
+
+            {/* Right side Start */}
+            {/* <group>
+                
                 <Coin 
                     coin={ coin13 }
                     position={ [ - 93, 17, 33 ] }
