@@ -11,6 +11,7 @@ import { Twitter } from "./world/models/TwitterLogo"
 import { XLogo } from "./world/models/XLogo"
 import { Elon } from "./world/models/Elon"
 import Texts from "./world/Texts"
+import Buildings from "./world/Buildings"
 
 
 export default function World(props)
@@ -21,7 +22,7 @@ export default function World(props)
     <>
         <group>
             <Platforms />
-            {/* <Buildings /> */}
+            <Buildings />
             {/* <Platforms /> */}
 
             <Texts char={ char } />

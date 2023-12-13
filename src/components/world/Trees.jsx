@@ -232,10 +232,13 @@ export default function Trees()
             <group>
                 <Tree1 scale={ 2 } position={ [ 560, 2, 193 ] } rotation-y={ Math.PI * 1.2 } />
                 <Tree2 scale={ 2 } position={ [ 582, 2, 258 ] } rotation-y={ Math.PI * 1.2 } />
+                <Tree2 scale={ 2 } position={ [ 686, 2, 200 ] } rotation-y={ Math.PI * 1.2 } />
                 
                 <Tree3 scale={ 2 } position={ [ 636, 2, 252 ] } rotation-y={ Math.PI * 1.2 } />
                 <Tree4 scale={ 2.5 } position={ [ 706, 2, 54 ] } rotation-y={ Math.PI * 1.2 } />
+                <Tree4 scale={ 2.5 } position={ [ 625, 2, 158 ] } rotation-y={ Math.PI * 1.2 } />
                 <Tree1 scale={ 2 } position={ [ 693, 2, 42 ] } rotation-y={ Math.PI * 1.2 } />
+                <Tree1 scale={ 2 } position={ [ 524, 2, 114 ] } rotation-y={ Math.PI * 1.2 } />
             </group>
         </>
     )

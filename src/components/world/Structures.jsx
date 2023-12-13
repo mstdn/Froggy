@@ -81,6 +81,38 @@ const Barrel = forwardRef((props, ref) =>
         )
 })
 
+const PirateBarrel = forwardRef((props, ref) =>
+{
+    const { nodes, materials } = useGLTF("./assets/models/world/pirate/barrel.glb")
+    return (
+        <RigidBody 
+            // colliders="hull"
+            colliders={ false }
+            gravityScale={ 1.5 }
+            // friction={ 1 }
+            // restitution={ 0.5 }
+            ref={ ref }
+            canSleep={ false }
+            {...props}
+        >   
+            <group dispose={null}>
+                <group scale={ 300 }>
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Prop_Barrel.geometry}
+                        material={materials.Atlas}
+                    />
+                </group>
+            </group>
+            <CuboidCollider 
+                args={ [ 1, 1, 1 ] } 
+                position={ [ 0, 1, 0 ] }
+            />
+        </RigidBody>
+        )
+})
+
 const Rover = forwardRef((props, ref) =>
 {
     const { nodes, materials } = useGLTF("./assets/models/world/rover.glb")
@@ -246,15 +278,21 @@ const Sign = (props) =>
 
 export default function Structures()
 {
+    // Crates
     const crate = useRef()
     const crate1 = useRef()
     const crate2 = useRef()
     const crate3 = useRef()
     
+    // Normal barrels
     const barrel = useRef()
     const barrel1 = useRef()
     
+    // Rover
     const rover = useRef()
+
+    // Pirate barrels
+    const pirateBarrel = useRef()
     
     return(
         <>
@@ -266,10 +304,13 @@ export default function Structures()
             <Barrel ref={ barrel } position={ [ - 6, 11, 65 ] } scale={ 1.5 } />
             <Barrel ref={ barrel1 } position={ [ 16, 7.9, 10 ] } scale={ 1.2 } />
             
-            <Rover ref={ rover } position={ [ 8.4, 7.8, - 80 ] } scale={ 1.2 } />
+            <Rover ref={ rover } position={ [ - 540, 3.1, - 200 ] } scale={ 1.2 } />
 
             <group>
                 <Sign position={ [ 0, 1.8, 15 ] } rotation-y={ Math.PI * 1 } />
+            </group>
+            <group>
+                <PirateBarrel ref={ pirateBarrel } position={ [ 56, 7.9, - 76 ] } rotation-y={ Math.PI * 1 } />
             </group>
         </>
     )
